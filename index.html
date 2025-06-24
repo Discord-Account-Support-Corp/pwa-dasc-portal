@@ -1,10 +1,37 @@
-<body style="text-align:center; font-family:sans-serif; padding-top:40vh;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>DASC Portal</title>
+
+  <!-- PWA: Manifest & Service Worker -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
   <script>
-    // Auto-redirect after short delay
-    setTimeout(() => {
-      window.location.href = "https://dasc-corporation.bit.ai";
-    }, 1000); // 1 second delay
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker registered'))
+        .catch(error => console.error('❌ Service Worker registration failed:', error));
+    }
   </script>
-  <h2>Redirecting to DASC Corporation Portal...</h2>
-  <p>If you're not redirected, <a href="https://dasc-corporation.bit.ai">click here</a>.</p>
+
+  <!-- iOS & iPadOS Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="DASC Portal" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="apple-touch-startup-image" href="icon-512.png" />
+</head>
+<body style="text-align:center; padding-top:40vh; font-family:sans-serif; margin: 0;">
+  <h2>Welcome to DASC Corporation</h2>
+  <p>Tap the button below to launch the portal.</p>
+  <button onclick="window.open('https://dasc-corporation.bit.ai', '_blank')" style="font-size:1.2em; padding:10px 20px;">
+    Enter Portal
+  </button>
+
+  <p style="margin-top: 2em; font-size: 0.9em; color: gray;">
+    Add this app to your Home Screen for fullscreen experience.
+  </p>
 </body>
+</html>
