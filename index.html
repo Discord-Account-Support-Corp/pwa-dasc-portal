@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DASC Corporation</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#000000">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body style="text-align:center; font-family:sans-serif; padding-top:40vh;">
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log("✅ Service Worker registered"))
-        .catch(err => console.error("❌ Service Worker error:", err));
-    }
+    // Auto-redirect after short delay
+    setTimeout(() => {
+      window.location.href = "https://dasc-corporation.bit.ai";
+    }, 1000); // 1 second delay
   </script>
-</head>
-<body style="text-align:center; padding-top:40vh; font-family:sans-serif;">
-  <h2>Welcome to DASC Corporation</h2>
-  <p>Tap below to open the portal</p>
-  <button style="font-size:1.2em; padding:10px 20px;" onclick="window.location.href='https://dasc-corporation.bit.ai'">
-    Enter Portal
-  </button>
+  <h2>Redirecting to DASC Corporation Portal...</h2>
+  <p>If you're not redirected, <a href="https://dasc-corporation.bit.ai">click here</a>.</p>
 </body>
-</html>
